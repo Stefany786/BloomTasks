@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Task - Bloom Tasks</title>
+    <script>
+        if (localStorage.getItem('bloomLoggedIn') !== 'true') { window.location.href = 'login.html'; }
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('bloomTheme') || 'pink');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <a href="index.html" class="back-link">← Back</a>
+    <h1 id="pageTitle">New Task</h1>
+</header>
+
+<main>
+    <form id="taskForm" class="task-form">
+        <label for="taskName">Task name</label>
+        <input type="text" id="taskName" placeholder="e.g. Water the plants" required>
+
+        <label for="dateInput">Due date</label>
+        <input type="date" id="dateInput" required>
+
+        <label for="timeInput">Due time (optional)</label>
+        <input type="time" id="timeInput">
+
+        <label for="prioritySelect">Priority</label>
+        <select id="prioritySelect">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+        </select>
+
+        <label for="categorySelect">Category</label>
+        <select id="categorySelect"></select>
+        <div class="new-category-row">
+            <input type="text" id="newCategoryInput" placeholder="New category...">
+            <button type="button" id="addCategoryBtn">Add</button>
+        </div>
+
+        <label for="detailsInput">Details (optional)</label>
+        <textarea id="detailsInput" rows="3" placeholder="Add any notes..."></textarea>
+
+        <button type="submit" id="submitBtn" class="submit-btn">Add Task 🌸</button>
+    </form>
+</main>
+
+<nav class="bottom-nav">
+    <a href="index.html" class="nav-item">🏠<span>Home</span></a>
+    <a href="add-task.html" class="nav-add active">➕</a>
+    <a href="settings.html" class="nav-item">⚙️<span>Settings</span></a>
+</nav>
+
+<script src="addtask.js"></script>
+</body>
+</html>

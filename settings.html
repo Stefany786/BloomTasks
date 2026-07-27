@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Settings - Bloom Tasks</title>
+  <script>
+    if (localStorage.getItem('bloomLoggedIn') !== 'true') { window.location.href = 'login.html'; }
+    document.documentElement.setAttribute('data-theme', localStorage.getItem('bloomTheme') || 'pink');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Settings</h1>
+</header>
+
+<main>
+  <div class="profile-card">
+    <span class="profile-avatar">🌸</span>
+    <div>
+      <p class="profile-name" id="profileName">BloomTask1</p>
+      <button id="logoutBtn" class="logout-btn">Log out</button>
+    </div>
+  </div>
+
+  <h2 class="section-title">Choose a theme</h2>
+  <div class="theme-options">
+    <button class="theme-swatch" data-theme="pink">
+      <span class="swatch-circle swatch-pink"></span>
+      Pink
+    </button>
+    <button class="theme-swatch" data-theme="lavender">
+      <span class="swatch-circle swatch-lavender"></span>
+      Lavender
+    </button>
+    <button class="theme-swatch" data-theme="mint">
+      <span class="swatch-circle swatch-mint"></span>
+      Mint
+    </button>
+  </div>
+</main>
+
+<nav class="bottom-nav">
+  <a href="index.html" class="nav-item">🏠<span>Home</span></a>
+  <a href="add-task.html" class="nav-add">➕</a>
+  <a href="settings.html" class="nav-item active">⚙️<span>Settings</span></a>
+</nav>
+
+<script src="settings.js"></script>
+</body>
+</html>

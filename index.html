@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bloom Tasks</title>
+    <script>
+        if (localStorage.getItem('bloomLoggedIn') !== 'true') { window.location.href = 'login.html'; }
+        document.documentElement.setAttribute('data-theme', localStorage.getItem('bloomTheme') || 'pink');
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <button id="menuToggle" class="menu-toggle">☰</button>
+    <h1>Bloom Tasks</h1>
+    <time id="selectedDateLabel"></time>
+</header>
+
+<div id="sidebarOverlay" class="sidebar-overlay"></div>
+<aside id="calendarSidebar" class="calendar-sidebar">
+    <div class="calendar-header">
+        <button id="prevMonth">‹</button>
+        <span id="monthLabel"></span>
+        <button id="nextMonth">›</button>
+    </div>
+    <div class="calendar-weekdays">
+        <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
+    </div>
+    <div id="calendarGrid" class="calendar-grid"></div>
+</aside>
+
+<main>
+    <div id="categoryFilters" class="category-filters"></div>
+    <ul id="taskList"></ul>
+    <div id="garden" class="garden"></div>
+</main>
+
+<div id="celebration" class="celebration">🎉 All bloomed! Great job! 🌸</div>
+
+<nav class="bottom-nav">
+    <a href="index.html" class="nav-item active">🏠<span>Home</span></a>
+    <a href="add-task.html" class="nav-add">➕</a>
+    <a href="settings.html" class="nav-item">⚙️<span>Settings</span></a>
+</nav>
+
+<script src="script.js"></script>
+</body>
+</html>
